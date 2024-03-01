@@ -83,7 +83,7 @@
   */
 /mob/proc/set_lewdblindness(amount)
 	var/old_eye_lewdblind = eye_lewdblind
-	eye_lewdblind = max(amount, (HAS_TRAIT(src, TRAIT_LewdBLIND)) ? 1 : 0)
+	eye_lewdblind = max(amount, (HAS_TRAIT(src, TRAIT_LEWDBLIND)) ? 1 : 0)
 	if(!old_eye_lewdblind || !eye_lewdblind)
 		update_lewdblindness()
 
