@@ -49,16 +49,15 @@
 		update_blindness()
 
 /// proc that adds and removes blindness overlays when necessary
-/mob/proc/update_blindness()
-	if(eye_blind) // UNCONSCIOUS or has blind trait, or has temporary blindness
-		if(stat == CONSCIOUS || stat == SOFT_CRIT)
-			throw_alert("blind", /atom/movable/screen/alert/blind)
-		overlay_fullscreen("blind", /atom/movable/screen/fullscreen/scaled/blind)
+/mob/proc/update_lewdblindness()
+	if(eye_lewdblind) //lewdblind trait
+		throw_alert("lewdblind", /atom/movable/screen/alert/blind)
+		overlay_fullscreen("lewdblind", /atom/movable/screen/fullscreen/scaled/blind)
 		// You are blind why should you be able to make out details like color, only shapes near you
 		// add_client_colour(/datum/client_colour/monochrome/blind)
 	else // CONSCIOUS no blind trait, no blindness
-		clear_alert("blind")
-		clear_fullscreen("blind")
+		clear_alert("lewdblind")
+		clear_fullscreen("lewdblind")
 		// remove_client_colour(/datum/client_colour/monochrome/blind)
 
 /mob/proc/lewdblind_eyes(amount)
