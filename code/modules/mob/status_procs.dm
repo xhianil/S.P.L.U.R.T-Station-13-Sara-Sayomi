@@ -60,6 +60,40 @@
 		clear_alert("blind")
 		clear_fullscreen("blind")
 		// remove_client_colour(/datum/client_colour/monochrome/blind)
+
+/mob/proc/lewdblind_eyes(amount)
+	var/old_lewdblind = eye_lewdblind
+	eye_lewdblind = max((HAS_TRAIT(src, TRAIT_LEWDBLIND)) ? 1 : eye_lewdblind , amount)
+	var/new_lewdblind = eye_lewdblind
+	if(old_lewdblind != new_lewdblind)
+		update_lewdblindness()
+
+/**
+  * Adjust a mobs blindness by an amount
+  *
+  * Will apply the blind alerts if needed
+  */
+/mob/proc/adjust_lewdblindness(amount)
+	var/old_eye_lewdblind = eye_lewdblind
+	eye_lewdblind = max((HAS_TRAIT(src, TRAIT_LEWDBLIND)) ? 1 : 0, eye_lewdblind + amount)
+	if(!old_eye_lewdblind || !eye_lewdblind)
+		update_lewdblindness()
+/**
+  * Force set the blindness of a mob to some level
+  */
+/mob/proc/set_lewdblindness(amount)
+	var/old_eye_lewdblind = eye_lewdblind
+	eye_lewdblind = max(amount, (HAS_TRAIT(src, TRAIT_LewdBLIND)) ? 1 : 0)
+	if(!old_eye_lewdblind || !eye_lewdblind)
+		update_lewdblindness()
+
+/// proc that adds and removes blindness overlays when necessary
+/mob/proc/update_lewdblindness()
+	if(eye_lewdblind) // lewdblind trait
+	else // CONSCIOUS no lewdblind trait, no lewdblindness
+		clear_alert("blind")
+		clear_fullscreen("blind")
+
 /**
   * Make the mobs vision blurry
   */
