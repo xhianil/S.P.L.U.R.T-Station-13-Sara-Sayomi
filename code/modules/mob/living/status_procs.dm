@@ -592,6 +592,19 @@
 	else
 		ADD_TRAIT(src, TRAIT_BLIND, source)
 
+/mob/living/proc/cure_lewdblind(source)
+	REMOVE_TRAIT(src, TRAIT_LEWDBLIND, source)
+	if(!HAS_TRAIT(src, TRAIT_LEWDBLIND))
+		if(eye_lewdblind <= 1) //little hack now that we don't actively check for trait and unconsciousness on update_blindness.
+			adjust_lewdblindness(-1)
+
+/mob/living/proc/become_lewdblind(source)
+	if(!HAS_TRAIT(src, TRAIT_LEWDBLIND)) // not blind already, add trait then overlay
+		ADD_TRAIT(src, TRAIT_LEWDBLIND, source)
+		lewdblind_eyes(1)
+	else
+		ADD_TRAIT(src, TRAIT_LEWDBLIND, source)
+
 /mob/living/proc/cure_nearsighted(source)
 	REMOVE_TRAIT(src, TRAIT_NEARSIGHT, source)
 	if(!HAS_TRAIT(src, TRAIT_NEARSIGHT))
