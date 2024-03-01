@@ -461,6 +461,27 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/blindness/remove()
 	quirk_holder?.cure_blind(ROUNDSTART_TRAIT)
 
+/datum/quirk/lewdblind
+	name = "Lewd blind"
+	desc = "You are completely blind, but still able to interact with the world."
+	value = -2
+	gain_text = "<span class='danger'>You can't see anything.</span>"
+	lose_text = "<span class='notice'>You miraculously gain back your vision.</span>"
+	medical_record_text = "Patient has permanent blindness."
+
+/datum/quirk/lewdblind/add()
+	quirk_holder.become_blind("blindfold_[REF(src)]")
+
+/datum/quirk/lewdblind/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/clothing/glasses/sunglasses/blindfold/white/glasses = new(get_turf(H))
+	if(!H.equip_to_slot_if_possible(glasses, ITEM_SLOT_EYES, bypass_equip_delay_self = TRUE)) //if you can't put it on the user's eyes, put it in their hands, otherwise put it on their eyes eyes
+		H.put_in_hands(glasses)
+	H.regenerate_icons()
+
+/datum/quirk/lewdblind/remove()
+	quirk_holder.cure_blind("blindfold_[REF(src)]")
+
 /datum/quirk/coldblooded
 	name = "Cold-blooded"
 	desc = "Your body doesn't create its own internal heat, requiring external heat regulation."
