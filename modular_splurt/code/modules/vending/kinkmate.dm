@@ -2,6 +2,7 @@
 	var/list/extra_products = list(
 		/obj/item/storage/pill_bottle/belly_inflation = 10,
 		/obj/item/clothing/head/helmet/space/deprivation_helmet = 5,
+		/obj/item/clothing/glasses/sunglasses/lewdblindfold = 5,
 		/obj/item/clothing/under/misc/latex_catsuit = 10,
 		/obj/item/clothing/shoes/latex_socks = 10,
 		/obj/item/clothing/shoes/latexheels = 10,
