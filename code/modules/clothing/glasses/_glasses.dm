@@ -368,6 +368,23 @@
 	..()
 	user.cure_blind("blindfold_[REF(src)]")
 
+/obj/item/clothing/glasses/sunglasses/lewdblindfold
+	name = "semi-blindfold"
+	desc = "Covers the eyes, preventing sight, though to a lesser degree than its normal counterpart."
+	icon_state = "blindfold"
+	item_state = "blindfold"
+	flash_protect = 2
+	tint = 3			// to make them blind
+
+/obj/item/clothing/glasses/sunglasses/lewdblindfold/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_EYES)
+		user.become_lewdblind("lewdblindfold_[REF(src)]")
+
+/obj/item/clothing/glasses/sunglasses/lewdblindfold/dropped(mob/living/carbon/human/user)
+	..()
+	user.cure_lewdblind("lewdblindfold_[REF(src)]")
+
 /obj/item/clothing/glasses/fakeblindfold
 	name = "thin blindfold"
 	desc = "Covers the eyes, but not thick enough to obscure vision. Mostly for aesthetic."
