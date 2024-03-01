@@ -49,6 +49,7 @@
 	/// Don't you DARE use this for a cheap way to ensure someone is stunned in your code.
 	var/mob_transforming = FALSE
 	var/eye_blind = 0		//Carbon
+	var/eye_lewdblind = 0	//Carbon
 	var/eye_blurry = 0		//Carbon
 	var/real_name = null
 	var/spacewalk = FALSE
