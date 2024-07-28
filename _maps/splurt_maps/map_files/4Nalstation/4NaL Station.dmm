@@ -3648,7 +3648,7 @@
 "rYE" = (/obj/machinery/teleport/station,/turf/open/floor/carpet/royalblack,/area/ai_monitored/turret_protected/aisat_interior)
 "rYQ" = (/turf/closed/wall/rust,/area/command/heads_quarters/cmo)
 "rZd" = (/obj/machinery/atmospherics/components/unary/vent_pump/on{external_pressure_bound = 140; name = "killroom vent"; pressure_checks = 0},/obj/machinery/camera{c_tag = "Xenobiology Kill Room"; dir = 4; network = list("ss13","rd")},/turf/open/floor/circuit/telecomms,/area/science/xenobiology)
-"saa" = (/obj/docking_port/stationary{dwidth = 1; height = 32; id = "arrivals_stationary"; name = "4nal arrivals"; roundstart_template = /datum/map_template/shuttle/arrival/4nal; width = 9},/turf/open/openspace/airless,/area/space)
+"saa" = (/obj/docking_port/stationary{dwidth = 1; height = 32; id = "arrivals_stationary"; name = "4nal arrivals"; roundstart_template = /datum/map_template/shuttle/arrival/fournal; width = 9},/turf/open/openspace/airless,/area/space)
 "say" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/flour,/obj/item/reagent_containers/food/condiment/flour,/obj/item/reagent_containers/food/condiment/rice,/obj/item/reagent_containers/food/condiment/rice,/obj/item/storage/fancy/egg_box,/obj/item/storage/fancy/egg_box,/obj/machinery/airalarm{pixel_y = 23},/turf/open/floor/plasteel/cafeteria,/area/security/prison/mess)
 "saA" = (/obj/effect/turf_decal/trimline/purple/filled/corner{dir = 8},/turf/open/floor/plasteel/white,/area/medical/genetics)
 "saK" = (/obj/machinery/air_sensor/atmos/toxin_tank,/turf/open/floor/engine/plasma,/area/engineering/atmos)
