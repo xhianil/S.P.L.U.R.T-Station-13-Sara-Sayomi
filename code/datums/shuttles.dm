@@ -679,6 +679,10 @@
 	suffix = "snaxi"
 	name = "arrival shuttle (Snaxi)"
 
+/datum/map_template/shuttle/arrival/4nal
+	suffix = "4nal"
+	name = "arrival shuttle (4nal)"
+
 /datum/map_template/shuttle/aux_base/default
 	suffix = "default"
 	name = "auxilliary base (Default)"
